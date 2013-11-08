@@ -1,0 +1,17 @@
+[user]
+   name = Steven Roberts
+   email = strobert@strobe.net
+[color]
+   ui = true
+[status]
+   short = true
+[alias]
+   stat = status -s
+   lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph --date-order"
+   ci = commit
+[core]
+   pager = less -X
+[merge]
+   tool = vimdiff
+[help]
+	autocorrect = 1
