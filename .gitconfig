@@ -1,6 +1,6 @@
 [user]
    name = Richard C. Greenwood
-   email = rcgreenw@tcoek12.org
+   email = rcgreenw@tausd.org
 [color]
    ui = true
 [status]
@@ -8,7 +8,9 @@
 [alias]
    stat = status -s
    lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph --date-order"
-   ci = commit
+   commit = commit --verbose
+   ci = commit --verbose
+   co = checkout
 [core]
    pager = less -X
 [merge]
