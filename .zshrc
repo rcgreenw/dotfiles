@@ -45,7 +45,7 @@ bindkey '^[[1;5D' backward-word
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
 
-alias ls='ls --color -sF'
+alias ls='ls --color -F'
 alias ll='ls -l'
 alias md='mkdir'
 alias rd='rmdir'
