@@ -28,6 +28,7 @@ MAIL=~/Maildir/
 CVS_RSH=ssh
 LESS='-n -s -j4 -R'
 LC_COLLATE=C
+GREP_COLORS "ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
 
 prompt='[%B%m%b] %n %T %D{%a} %~>'
 
