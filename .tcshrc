@@ -1,0 +1,36 @@
+setenv PATH ~/bin:${PATH}:/sbin:/usr/sbin:.
+#set prompt="%P %S%m%s %~>"
+
+if ($?TERM) then
+   #if ($TERM == xterm) then
+   #   set prompt = "%{\033]0;%n@%m:%~\007%}%? %P %U%m%u %c1%#"
+   #else
+   #   set prompt = "%? %P %U%m%u %c1%#"
+   #endif
+   source ~/.alias
+endif
+
+if ($?DISPLAY == 0) then
+    if ($?REMOTEHOST) then
+        setenv DISPLAY ${REMOTEHOST}:0
+    endif
+endif
+
+set ignoreeof
+set autolist=ambiguous
+set autologout=0
+set savehist=(2000 merge)
+set visiblebell
+
+setenv CVSROOT :ext:rcgreenw@raven:/usr/local/cvs
+setenv CVS_RSH '/usr/bin/ssh'
+setenv LS_COLORS di=36
+setenv LC_TIME en_DK
+setenv GREP_COLORS "ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
+
+bindkey -k up history-search-backward
+bindkey -k down history-search-forward
+bindkey -a '^[[1;5D' backward-word
+bindkey -a '^[OD' backward-word
+bindkey -a '^[[1;5C' forward-word
+bindkey -a '^[OC' forward-word
