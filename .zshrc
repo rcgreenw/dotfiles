@@ -1,7 +1,7 @@
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
-zstyle :compinstall filename '/home/strobert/.zshrc'
+zstyle :compinstall filename '/home/rcgreenw/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -20,7 +20,7 @@ setopt appendhistory extendedhistory histfcntllock histverify
 setopt ignoreeof printexitvalue
 setopt cbases cprecedences
 
-PATH=/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin:/home/strobert/bin:/usr/X11R6/bin
+PATH=~/bin:${PATH}:/sbin:/usr/sbin:.
 LS_COLORS='di=36'
 PAGER='less'
 READNULLCMD=less
@@ -28,7 +28,7 @@ MAIL=~/Maildir/
 CVS_RSH=ssh
 LESS='-n -s -j4 -R'
 LC_COLLATE=C
-GREP_COLORS "ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
+GREP_COLORS="ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
 
 prompt='[%B%m%b] %n %T %D{%a} %~>'
 
@@ -41,7 +41,9 @@ prompt='[%B%m%b] %n %T %D{%a} %~>'
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 bindkey '^[[1;5C' forward-word
+bindkey '^[OC' forward-word
 bindkey '^[[1;5D' backward-word
+bindkey '^[OD' backward-word
 bindkey '^[[1~' beginning-of-line
 bindkey '^[[4~' end-of-line
 
@@ -67,14 +69,7 @@ alias rssh='ssh `rolefind "$@"`'
 alias printenv='builtin printenv | sort'
 alias dlook='grep "$@" /usr/share/dict/words'
 alias mkpasswd='mkpasswd -s 0'
-alias icd='cd /install/kickstart/strobe'
-alias bcd='cd /usr/build/strobert/usr/src/redhat'
-alias pcd='cd /etc/puppet/modules/strobenet'
 alias od='od -A x -t x1z'
 alias grep='grep -E'
 alias cf='fold -w1 "$@" | sort | uniq -c | sort -rn'
 alias reload='rndc reload "$@" IN internal; sleep 1; rndc reload "$@" IN external'
-alias wcd='pushd /usr/local/wfcom/www.wfcommittee.com'
-alias dcd='pushd /usr/local/wfcom/dev.wfcommittee.com'
-alias vzl="sudo vzlist -a -o ctid,hostname,status,ostemplate,numproc,diskspace,diskspace.s,diskinodes,diskinodes.s | perl -p -e 's/\.internal\.strobe\.net//' | tr -s ' ' | tr ' ' '\t' | expand -t 1,2,7,17,26,44,50,60,70,78"
-alias from=from.pl
