@@ -1,0 +1,45 @@
+alias mv mv -i
+alias ls ls -F --color --time-style=long-iso
+alias lsd ls -Flash --color --time-style=long-iso
+alias mpg123 mpg123 -b 1024
+alias inet netstat --inet
+alias ssh ssh -P -2
+alias cvs cvs -q -z3
+alias diff diff -u
+alias ps ps --cols=300
+alias checkslave "echo show slave status | mysql | cut -f 11-12,33"
+alias watchslave 'watch "echo show slave status | mysql | cut -f 11-12,33"'
+alias whichrpm "which \!^ | xargs rpm -qf"
+alias lynx links
+alias ipa ip -f inet a
+#alias traceroute 'traceroute -I \!* 240'
+alias mkpasswd "mkpasswd -s 0 | grep -v \[oO0il1\] | grep \[0-9\]\[0-9\] | grep \[A-Z\]\[A-Z\]"
+alias yum yum -C
+alias hb_status /usr/bin/cl_status rscstatus
+#alias ldapsearch ldapsearch -H ldap://kella.tcoek12.org -D uid=rcgreenw,ou=tausd,ou=people,dc=tcoek12,dc=org -x -W -b ou=tausd,ou=people,dc=tcoek12,dc=org
+alias ldapsearchtcoe ldapsearch -H ldap://kella.tcoek12.org -D uid=rcgreenw,ou=tausd,ou=people,dc=tcoek12,dc=org -x -W -b ou=tausd,ou=people,dc=tcoek12,dc=org
+alias ldapsearchths ldapsearch -H ldap://ths.tcoek12.org -D ldapquery@ths.tcoek12.org -x -W -b ou=Staff,ou=DomainLogons,dc=ths,dc=tcoek12,dc=org
+alias ldapsearchwes ldapsearch -H ldap://wes.tcoek12.org -D ldapquery@wes.tcoek12.org -x -W -b ou=Staff,ou=DomainUsers,dc=wes,dc=tcoek12,dc=org
+alias ldappasswd ldappasswd -H ldap://kella.tcoek12.org -D uid=rcgreenw,ou=tausd,ou=people,dc=tcoek12,dc=org -x -W -S
+alias cpanflute2 "/usr/bin/cpanflute2 --email='<rcgreenw@tcoek12.org>' --installdirs=vendor --just-spec"
+alias cpanflute cpanflute2
+alias wdstatus sudo ipmitool mc watchdog get
+alias identify sudo ipmitool chassis identify
+alias ipmipower ipmipower -P --username ADMIN --host
+alias soadate date +%Y%m%d
+alias crm_status sudo crm_mon -1 -r
+alias showpingd "cibadmin --query | grep pingd"
+alias checkconnected "cibadmin --query --xpath '//nvpair[@name=\'connected\']' "
+alias man "(setenv LANG C; \man \!^)"
+alias perldoc "(setenv LANG C; \perldoc \!^)"
+alias grep grep --color
+alias ipmitoolpower \ipmitool -I lan -U root -f /etc/nagios/check_ipmi/passwd.default -H \!:1 power \!:2
+alias ipmitool \ipmitool -I lan -U root -f /etc/nagios/check_ipmi/passwd.default -H 
+alias virlist "(echo raven; virsh -c qemu+tcp://raven/system list --all; echo crow; virsh -c qemu+tcp://crow/system list --all)"
+alias virsh-raven virsh -c qemu+tcp://raven/system
+alias virsh-crow  virsh -c qemu+tcp://crow/system
+#alias filteroldproxy cut -d \  -f 3 /tmp/oldproxy.txt | sed -e 's/\.[^.]\+$//' | sort | uniq
+alias cprra "(echo sudo cp sw02_traffic_in_\!:1.rrd bak ; echo sudo cp sw02_traffic_in_\!:2.rrd sw02_traffic_in_\!:1.rrd )"
+alias aping sudo arping -I vlan21
+alias showmigrations "crm configure show | grep uname | grep -v nosuicide"
+alias pcs sudo pcs

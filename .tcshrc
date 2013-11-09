@@ -1,6 +1,14 @@
-setenv PATH ~/bin:${PATH}:/sbin:/usr/sbin:.
-#set prompt="%P %S%m%s %~>"
 
+setenv PATH ~/bin:${PATH}:/sbin:/usr/sbin:.
+setenv LS_COLORS di=36
+setenv GREP_COLORS "ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
+setenv LESS "-n -s -j4 -R"
+setenv CVS_RSH ssh
+setenv PAGER "less"
+setenv LC_COLLATE C
+setenv LC_TIME en_DK
+
+#set prompt="%P %S%m%s %~>"
 if ($?TERM) then
    #if ($TERM == xterm) then
    #   set prompt = "%{\033]0;%n@%m:%~\007%}%? %P %U%m%u %c1%#"
@@ -16,17 +24,22 @@ if ($?DISPLAY == 0) then
     endif
 endif
 
-set ignoreeof
-set autolist=ambiguous
-set autologout=0
-set savehist=(2000 merge)
-set visiblebell
 
-setenv CVSROOT :ext:rcgreenw@raven:/usr/local/cvs
-setenv CVS_RSH '/usr/bin/ssh'
-setenv LS_COLORS di=36
-setenv LC_TIME en_DK
-setenv GREP_COLORS "ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
+set savehist=(2000 merge)
+set histlit
+
+set ignoreeof
+set autologout=0
+set autolist=ambiguous
+set implicitcd
+set pushdtohome
+set visiblebell
+set color
+set colorcat
+
+foreach src (`echo ~/.tcshrc.d/*`)
+   source $src
+end
 
 bindkey -k up history-search-backward
 bindkey -k down history-search-forward
