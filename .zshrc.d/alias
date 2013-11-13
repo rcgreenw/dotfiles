@@ -1,5 +1,7 @@
-alias ls='ls --color -F'
+alias ls='ls --color -F --time-style=long-iso'
 alias ll='ls -l'
+alias lsd='ls -Flash --color --time-style=long-iso'
+alias ps ps --cols=300
 alias md='mkdir'
 alias rd='rmdir'
 alias history='history -i -30'
