@@ -14,5 +14,6 @@
 .tmux.conf
 #.vim/colors/strobe.vim
 #.vimrc
+.zshenv
 .zshrc
 .zshrc.d/alias
