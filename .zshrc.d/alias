@@ -28,3 +28,6 @@ alias cf='fold -w1 "$@" | sort | uniq -c | sort -rn'
 alias reload='rndc reload "$@" IN internal; sleep 1; rndc reload "$@" IN external'
 alias checkslave='echo show slave status | mysql | cut -f 11-12,33,38'
 alias watchcheckslave='watch "echo show slave status | mysql | cut -f 11-12,33,38"'
+whichrpm() {which $* | xargs rpm -qf}
+alias diff='diff -u'
+alias detach='tmux detach'
