@@ -13,7 +13,7 @@
 #.tcshrc.d/hushlogin
 .tmux.conf
 #.vim/colors/strobe.vim
-#.vimrc
+.vimrc
 .zlogin
 .zprofile
 .zshenv
