@@ -18,4 +18,5 @@
 .zprofile
 .zshenv
 .zshrc
+.zshrc.d
 #.zshrc.d/alias #link the directory, not the files
