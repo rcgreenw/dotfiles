@@ -16,9 +16,9 @@ bindkey -e
 
 setopt autocd cdablevars pushdsilent pushdtohome
 setopt extendedglob
-setopt appendhistory extendedhistory histfcntllock histverify
+setopt appendhistory extendedhistory histverify
 setopt ignoreeof printexitvalue
-setopt cbases cprecedences
+setopt cbases 
 
 PATH=~/bin:${PATH}:/sbin:/usr/sbin:.
 LS_COLORS='di=36'
@@ -37,7 +37,8 @@ if test -z "$TMUX"; then
    # only for first shell
    if [[ $SHLVL == 1 ]]; then
       #if no session is started, start a new session
-      which tmux 2>&1 >/dev/null && tmux attach -t $HOSTNAME || tmux new-session -s $HOSTNAME
+      SHORTHOST=`hostname -s`
+      which tmux 2>&1 >/dev/null && tmux attach -t $SHORTHOST || tmux new-session -s $SHORTHOST
    fi
 
 # TMUX already running

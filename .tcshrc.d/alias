@@ -1,7 +1,6 @@
 alias mv mv -i
 alias ls ls -F --color --time-style=long-iso
 alias lsd ls -Flash --color --time-style=long-iso
-alias mpg123 mpg123 -b 1024
 alias inet netstat --inet
 alias ssh ssh -P -2
 alias cvs cvs -q -z3
