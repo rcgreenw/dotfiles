@@ -4,6 +4,7 @@ highlight comment ctermfg=cyan
 
 set shell=/bin/bash
 set shell=/bin/tcsh\ -f
+set shell=/bin/zsh
 
 :nnoremap <F8> /\<\d\{10}\><CR>ce<C-r>=strftime("%Y%m%d00")<CR><Esc>:echo @"<CR>
 
