@@ -1,0 +1,10 @@
+#This file contains just the user part so it can be overridded on each system
+#Copy this file to your home directory and change to suit
+#After copying, but before changing, run this inside this repository:
+# git config user.email "`git config --get user.email`"
+#The following will override the user.email for a repository:
+# git config user.email 
+[user]
+   name = Richard C. Greenwood
+   email = rcgreenw-github at slotechs.com
+

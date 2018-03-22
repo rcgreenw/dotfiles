@@ -1,6 +1,5 @@
-[user]
-   name = Richard C. Greenwood
-   email = rcgreenw-github at slotechs.com
+[include]
+   path = .gitconfig.user
 [color]
    ui = true
 [status]
