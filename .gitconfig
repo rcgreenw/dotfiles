@@ -17,3 +17,7 @@
    tool = vimdiff
 [help]
 	autocorrect = 1
+[http]
+   sslCAinfo = /etc/pki/tls/certs/ca-bundle.crt
+[push]
+	default = simple
