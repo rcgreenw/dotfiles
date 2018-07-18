@@ -1,6 +1,7 @@
 #! /bin/bash
 
 SCRIPTPATH=$(dirname `which ${BASH_SOURCE[0]}`)
+SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd ~/
 for file in `grep -v ^# $SCRIPTPATH/files` ; do
    if [[ -a $SCRIPTPATH/$file ]] ; then
