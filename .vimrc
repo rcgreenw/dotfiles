@@ -15,7 +15,7 @@ endif
 return strftime("%Y%m%d") . '00'
 endfunction
 
-command Soa :%s/\(2[0-9]\{7}\)\([0-9]\{2}\)\(\s*; [sS]erial\)/\=UPDSERIAL(submatch(1), submatch(2)) . submatch(3)/g
+command Soa :%s/\(SOA.*\)\(2[0-9]\{7}\)\([0-9]\{2}\)\(\s*\)/\=submatch(1) . UPDSERIAL(submatch(2), submatch(3)) . submatch(4)/g
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
