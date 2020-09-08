@@ -32,8 +32,12 @@ GREP_COLORS="ms=01;31:mc=01;31:sl=33:cx=:fn=35:ln=32:bn=32:se=36"
 
 prompt='%? [%B%n@%m%b] %T %~>'
 
+# don't start TMUX if coming from same host
+SSH_CONN_PARTS=(${(ps: :)${SSH_CONNECTION}})
+if [ "$SSH_CONN_PARTS[1]" = "$SSH_CONN_PARTS[3]" ]; then
+
 # start TMUX if not inside TMUX
-if test -z "$TMUX"; then
+elif test -z "$TMUX"; then
    # only for first shell
    if [[ $SHLVL == 1 ]]; then
       #if no session is started, start a new session
