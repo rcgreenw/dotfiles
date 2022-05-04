@@ -32,3 +32,4 @@ whichrpm() {which $* | xargs rpm -qf}
 alias diff='diff -u'
 alias detach='tmux detach'
 alias wping='watch fping -D -t 100 -e'
+killidle() {for s in `w | awk '/[1-9]day?/ {print $2}'`; do pkill -HUP -t $s; done}
