@@ -1,5 +1,6 @@
 set ts=3 ai sw=3 nowrap et ruler nrformats=hex
 set background=dark
+color desert
 highlight comment ctermfg=cyan
 
 set shell=/bin/bash
