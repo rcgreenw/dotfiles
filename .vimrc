@@ -1,3 +1,4 @@
+source ~/.vim/templates.vim
 set ts=3 ai sw=3 nowrap et ruler nrformats=hex
 set background=dark
 color desert
@@ -21,3 +22,5 @@ command Soa :%s/\(SOA.*\)\(2[0-9]\{7}\)\([0-9]\{2}\)\(\s*\)/\=submatch(1) . UPDS
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+:filetype plugin on

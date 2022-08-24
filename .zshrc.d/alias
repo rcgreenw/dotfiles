@@ -33,4 +33,8 @@ alias diff='diff -u'
 alias detach='\tmux detach'
 alias tmux='tmux attach -t `hostname -s` || tmux new-session -s `hostname -s`'
 alias wping='watch fping -D -t 100 -e'
+alias tryagain='while read; do sleep 10; done << (eval $@)'
+alias tryagain='eval $@ | while read; do sleep 10; done'
+alias about='echo Model Number:           AP1231'
 killidle() {for s in `w | awk '/[1-9]day?/ {print $2}'`; do pkill -HUP -t $s; done}
+alias moshcleanup='pkill -SIGUSR1 mosh-server'

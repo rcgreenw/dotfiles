@@ -20,3 +20,9 @@
    sslCAinfo = /etc/pki/tls/certs/ca-bundle.crt
 [push]
 	default = simple
+[diff]
+	submodule = log
+[submodule]
+	recurse = true
+[fetch]
+	recurseSubmodules = true
