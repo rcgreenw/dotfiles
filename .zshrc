@@ -35,6 +35,11 @@ prompt='%? [%B%n@%m%b] %T %~>'
 # don't start TMUX if coming from same host
 SSH_CONN_PARTS=(${(ps: :)${SSH_CONNECTION}})
 if [ "$SSH_CONN_PARTS[1]" = "$SSH_CONN_PARTS[3]" ]; then
+   echo "Skipping tmux, connection from ${SSH_CONN_PARTS[1]}"
+
+# don't start TMUX if coming from same network (to prevent tmux loops)
+elif [ "${SSH_CONN_PARTS[1]%[:.]*}" = "${SSH_CONN_PARTS[3]%[:.]*}" ]; then
+   echo "Skipping tmux, connection from ${SSH_CONN_PARTS[1]%[:.]*}"
 
 # start TMUX if not inside TMUX
 elif test -z "$TMUX"; then
