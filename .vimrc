@@ -1,4 +1,4 @@
-source ~/.vim/templates.vim
+"source ~/.vim/templates.vim
 set ts=3 ai sw=3 nowrap et ruler nrformats=hex
 set background=dark
 color desert
@@ -24,3 +24,15 @@ set pastetoggle=<F2>
 set showmode
 
 :filetype plugin on
+if has("clipboard")
+       " CTRL-C and CTRL-Insert are Copy
+    vnoremap <C-S-C> "+y
+    vnoremap <C-Insert> "+y
+
+    " CTRL-V and SHIFT-Insert are Paste
+    map <C-S-V>		"+gP
+    map <S-Insert>		"+gP
+
+    cmap <C-S-V>		<C-R>+
+    cmap <S-Insert>		<C-R>+
+endif
