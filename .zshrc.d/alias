@@ -31,7 +31,7 @@ alias watchcheckslave='watch "echo show slave status | mysql | cut -f 11-12,33,3
 whichrpm() {which $* | xargs rpm -qf}
 alias diff='diff -u'
 alias detach='\tmux detach'
-alias tmux='tmux attach -t `hostname -s` || tmux new-session -s `hostname -s`'
+#alias tmux='tmux attach -t `hostname -s` || tmux new-session -s `hostname -s`'
 alias wping='watch fping -D -t 100 -e'
 alias tryagain='while read; do sleep 10; done << (eval $@)'
 alias tryagain='eval $@ | while read; do sleep 10; done'
