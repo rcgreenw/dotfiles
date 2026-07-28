@@ -1,0 +1,45 @@
+[global_config]
+  focus = mouse
+  window_state = maximise
+[keybindings]
+[profiles]
+  [[default]]
+    foreground_color = "#00ff00"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    bold_is_bright = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:145
+      maximised = True
+      fullscreen = False
+      size = 1920, 1017
+      title = /usr/bin/zsh
+      last_active_window = True
+    [[[notebook0]]]
+      type = Notebook
+      parent = window0
+      order = 0
+      labels = None, None
+      last_active_term = c3fcca8d-3b97-4418-9328-dc9931000884, 75bb1045-c666-4211-ae5f-9b6f96eb10bb
+      active_page = 1
+    [[[terminal0]]]
+      type = Terminal
+      parent = notebook0
+      order = 0
+      profile = default
+      uuid = c3fcca8d-3b97-4418-9328-dc9931000884
+      directory = /tmp
+      command = "tmux new-session -As 0;"
+    [[[terminal1]]]
+      type = Terminal
+      parent = notebook0
+      order = 1
+      profile = default
+      uuid = 75bb1045-c666-4211-ae5f-9b6f96eb10bb
+      directory = ""
+      command = "mosh sg1.shastacoe.net;"
+[plugins]
