@@ -1,3 +1,4 @@
+.config/terminator/config
 .cvsrc
 #.exrc
 .gitconfig
@@ -20,4 +21,3 @@
 .zshrc
 .zshrc.d
 #.zshrc.d/alias #link the directory, not the files
-.config/terminator/config
